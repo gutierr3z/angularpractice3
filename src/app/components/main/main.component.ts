@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'main',
@@ -18,7 +19,11 @@ export class MainComponent implements OnInit {
   currentClasses = {};
   currentStyles = {};
 
-  constructor() { 
+  users:string[];
+
+  constructor( public dataService:DataService ) { 
+
+    this.users = this.dataService.getUsers();
     this.setCurrentClasses();
     this.setCurrentStyles();
   }
