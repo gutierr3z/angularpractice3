@@ -16,15 +16,24 @@ export class MainComponent implements OnInit {
   isSpecial:boolean = true;
   canSave:boolean = true;
   currentClasses = {};
+  currentStyles = {};
 
   constructor() { 
     this.setCurrentClasses();
+    this.setCurrentStyles();
   }
 
   setCurrentClasses() {
     this.currentClasses = {
       savable: this.canSave,
       special: this.isSpecial
+    }
+  }
+
+  setCurrentStyles() {
+    this.currentStyles = {
+      'color': this.canSave ? 'pink' : 'orange',
+      'font-size': this.canSave ? '25px' : '10px'
     }
   }
 
