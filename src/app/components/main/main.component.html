@@ -15,12 +15,14 @@
           i can have a whole buch of shit over here between these two guys.  like lots of stuff, they can be in totally seperate parts of the layout.
           <ng-template #XXX>blah blah blah...</ng-template>
         </p>
-        <div [ngSwitch] = 'theValue'>
+        <div [ngSwitch] = 'theValue' [class.special] = 'isSpecial'>
           <div *ngSwitchCase = "'1'">one</div>
           <div *ngSwitchCase = "'2'">two</div>
           <div *ngSwitchCase = "'3'">three</div>
           <div *ngSwitchDefault>number...</div>
         </div>
+
+        <h4 [ngClass] = 'currentClasses'>Am I pretty???</h4>
     </article>
   </section>
 </section>

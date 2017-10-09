@@ -13,7 +13,20 @@ export class MainComponent implements OnInit {
 
   theValue:number = 3;
 
-  constructor() { }
+  isSpecial:boolean = true;
+  canSave:boolean = true;
+  currentClasses = {};
+
+  constructor() { 
+    this.setCurrentClasses();
+  }
+
+  setCurrentClasses() {
+    this.currentClasses = {
+      savable: this.canSave,
+      special: this.isSpecial
+    }
+  }
 
   ngOnInit() {
   }
