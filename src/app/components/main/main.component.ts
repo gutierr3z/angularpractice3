@@ -9,6 +9,10 @@ export class MainComponent implements OnInit {
 
   people:string[] = [ 'un', 'deux', 'trois', 'quatre' ];
 
+  show:boolean = true;
+
+  theValue:number = 3;
+
   constructor() { }
 
   ngOnInit() {
