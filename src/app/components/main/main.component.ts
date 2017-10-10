@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 
+
 @Component({
   selector: 'main',
   templateUrl: './main.component.html',
@@ -19,11 +20,19 @@ export class MainComponent implements OnInit {
   currentClasses = {};
   currentStyles = {};
 
-  users:string[];
+  // users:string[];
+
+  users:any[];
 
   constructor( public dataService:DataService ) { 
 
-    this.users = this.dataService.getUsers();
+    // this.users = this.dataService.getUsers();
+
+    this.dataService.getUsersx().subscribe( users => {
+      // console.log( users );
+      this.users = users;
+    });
+
     this.setCurrentClasses();
     this.setCurrentStyles();
   }
